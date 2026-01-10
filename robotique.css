@@ -6,9 +6,13 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
-    background: white;
+    background-image: url("/images/metro-quai\ 2.png"); /* Vérifie le chemin selon ton arborescence */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     font-family: Arial, sans-serif;
-    color: white;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* =========================
@@ -16,7 +20,7 @@ html, body {
 ========================= */
 .display-header {
     width: 100%;
-    background: #000000;
+    background: #000;
     border-bottom: 3px solid #ffcf25;
     padding: 25px 40px 30px;
     box-sizing: border-box;
@@ -61,15 +65,19 @@ html, body {
 .clock {
     font-size: 46px;
     font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px black;
 }
 
 .next-tab p {
     margin: 5px 0;
+    color: white;
 }
 
 .tab-name {
     color: #ffcf25;
     font-weight: bold;
+    text-shadow: 1px 1px 2px black;
 }
 
 /* MENU CENTRAL */
@@ -117,6 +125,7 @@ html, body {
 .step p {
     margin-top: 10px;
     font-size: 18px;
+    color: white;
 }
 
 /* BARRES ENTRE POINTS */
@@ -170,6 +179,7 @@ html, body {
     padding: 20px;
     border-radius: 14px;
     text-align: center;
+    color: white;
 }
 
 .news-card img {
@@ -187,4 +197,31 @@ html, body {
 .news-card p {
     opacity: 0.7;
     font-size: 18px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 768px) {
+    .menu-row,
+    .under-menu-row {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .nav-container {
+        width: 100%;
+    }
+
+    .side {
+        width: 100%;
+        text-align: center;
+    }
+
+    .metro-container,
+    .news-container {
+        flex: 0 0 100%;
+        max-width: 90%;
+    }
 }
