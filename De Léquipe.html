@@ -2,39 +2,64 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Menu cylindrique avec titres</title>
+    <title>Metro UI</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/cachedImage log1.webp">
 </head>
 <body>
+    <header>
+        <div class="top-row">
 
-<div class="menu-wrapper">
+        <!-- PANNEAU GAUCHE -->
+        <div class="side-panel">
+            <div id="clock" class="clock">00 h 00</div>
 
-    <!-- Cylindre -->
-    <div class="cylinder">
-        <div class="dots-container">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+            <div class="station-card">
+                <img id="stationImage" src="" alt="">
+                <div class="station-name" id="stationName"></div>
+            </div>
+        </div>
 
-            <!-- Point mobile -->
-            <div class="indicator"></div>
+        <!-- MENU -->
+        <div class="menu-wrapper">
+
+            <div class="menu-logo">
+                <img src="images/cachedImage log1.webp" alt="Logo">
+            </div>
+
+            <div class="cylinder">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+
+            <div class="labels">
+                <div>Accueil</div>
+                <div>Club</div>
+                <div>l'équipe</div>
+                <div>Bob le Robot</div>
+                <div>CRC</div>
+                <div>Vidéo</div>
+            </div>
+
+            <!-- NEWS -->
+        <div class="news-screen">
+            <img id="newsImage">
+            <div class="news-overlay">
+                <div class="news-title" id="newsTitle"></div>
+                <div class="news-date" id="newsDate"></div>
+            </div>
+            </div>
+
         </div>
     </div>
 
-    <!-- Titres sous le cylindre -->
-    <div class="labels">
-        <span>Accueil</span>
-        <span>Profil</span>
-        <span>club</span>
-        <span>de lÉquipe</span>
-        <span>Stats</span>
-        <span>Paramètres</span>
-    </div>
-
 </div>
+    </header>
+
 
 <script src="script.js"></script>
 </body>
