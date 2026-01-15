@@ -1,16 +1,30 @@
- * { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
+/* ===== BODY : IMAGE DE FOND GLOBALE ===== */
 body {
     margin: 0;
-    height: 100vh;
-    background:#000000;
+    font-family: Arial, sans-serif;
+    color: #fff;
+
+    background-image: url("images/mur metro.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ===== HEADER : BLOC AUTONOME NOIR ===== */
+header {
+    background-color: #000;
+    min-height: 100vh; /* hauteur écran */
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
-    color: #fff;
 }
 
+/* ===== STRUCTURE ===== */
 .top-row {
     display: flex;
     align-items: center;
@@ -33,7 +47,7 @@ body {
     justify-content: center;
 }
 
-/* STATION */
+/* ===== STATION ===== */
 .station-card {
     margin-top: 10px;
     width: 160px;
@@ -72,7 +86,7 @@ body {
     height: 50px;
 }
 
-/* CYLINDRE */
+/* ===== CYLINDRE ===== */
 .cylinder {
     width: 420px;
     height: 70px;
@@ -83,7 +97,7 @@ body {
     align-items: center;
 }
 
-/* DOT */
+/* ===== DOT ===== */
 .dot {
     width: 36px;
     height: 36px;
@@ -93,7 +107,6 @@ body {
     cursor: pointer;
 }
 
-/* POINT NOIR DANS LE ROND */
 .dot.active::after {
     content: "";
     width: 10px;
@@ -106,7 +119,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/* LABELS */
+/* ===== LABELS ===== */
 .labels {
     width: 420px;
     display: grid;
@@ -115,7 +128,8 @@ body {
     margin-top: 8px;
     text-align: center;
 }
-/* NEWS */
+
+/* ===== NEWS ===== */
 .news-screen {
     margin-top: 15px;
     width: 420px;
