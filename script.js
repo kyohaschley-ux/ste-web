@@ -93,3 +93,41 @@ function showNews() {
 
 setInterval(showNews, 7000);
 loadNews();
+/* ================== DOM READY ================== */
+document.addEventListener("DOMContentLoaded", () => {
+
+  const navSound = document.getElementById("navSound");
+  if (!navSound) return;
+
+  let targetUrl = null;
+
+  const navLinks = document.querySelectorAll(
+    "a[href]:not([target='_blank'])"
+  );
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+      const url = this.getAttribute("href");
+
+      // Ignore ancres ou liens vides
+      if (!url || url.startsWith("#")) return;
+
+      e.preventDefault();
+      targetUrl = url;
+
+      navSound.currentTime = 0;
+      navSound.play().catch(() => {
+        // fallback si le son est bloqué
+        window.location.href = targetUrl;
+      });
+    });
+  });
+
+  // 🔔 Quand le son est TERMINÉ → navigation
+  navSound.addEventListener("ended", () => {
+    if (targetUrl) {
+      window.location.href = targetUrl;
+    }
+  });
+
+});
