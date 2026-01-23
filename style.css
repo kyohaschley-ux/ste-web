@@ -12,7 +12,8 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+
+background-color: #b99169;    background-attachment: fixed;
 }
 h2 {
   text-align: center;
@@ -563,6 +564,10 @@ img {
     rgba(0,0,0,0) 100%
   );
 }
+#navSound {
+  display: none;
+}
+
 
 
 /* =========================================================
