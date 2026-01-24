@@ -5,71 +5,91 @@
     <title>Accueil</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="images/cachedImage log1.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+>
+
 </head>
 
 <body>
 
 <header class="sticky-header">
-    <div class="top-row">
+  <div class="top-row">
 
-        <!-- PANNEAU GAUCHE -->
-        <div class="side-panel">
-            <div id="clock" class="clock">00 h 00</div>
+    <!-- ZONE À CACHER AU SCROLL -->
+    <div class="header-hide-zone">
 
-            <div class="station-card">
-                <img id="stationImage" src="" alt="Station">
-                <div class="station-name" id="stationName"></div>
+      <!-- PANNEAU GAUCHE -->
+      <div class="side-panel">
+        <div id="clock" class="clock">00 h 00</div>
 
-                <!-- LOGO EN BAS -->
-                <div class="station-logo">
-                    <a href="accueil.html">
-                        <img src="images/cachedImage log1.webp" alt="Logo">
-                    </a>
-                </div>
-            </div>
-        </div>
+        <div class="station-card">
+          <img id="stationImage" src="" alt="Station">
+          <div class="station-name" id="stationName" data-translate></div>
 
-        <!-- MENU -->
-        <div class="menu-wrapper">
-
-            <div class="cylinder">
-                <a href="accueil.html" class="dot active"></a>
-                <a href="club.html" class="dot"></a>
-                <a href="equipe.html" class="dot"></a>
-                <a href="robot.html" class="dot"></a>
-                <a href="crc.html" class="dot"></a>
-                <a href="video.html" class="dot"></a>
-            </div>
-
-            <div class="labels">
-                <a href="accueil.html">Accueil</a>
-                <a href="club.html">Club</a>
-                <a href="equipe.html">L’équipe</a>
-                <a href="robot.html">Bob le Robot</a>
-                <a href="crc.html">CRC</a>
-                <a href="video.html">Vidéo</a>
-            </div>
             
-
-            <!-- NEWS -->
-            <div class="news-screen">
-                <img id="newsImage" alt="Actualité">
-                <div class="news-overlay">
-                    <div class="news-title" id="newsTitle"></div>
-                    <div class="news-date" id="newsDate"></div>
-                </div>
-            </div>
-
         </div>
+      </div>
+
+      <!-- ACTUALITÉS -->
+      <div class="news-screen">
+        <img id="newsImage" alt="Actualité">
+        <div class="news-overlay">
+          <div class="news-title" id="newsTitle"></div>
+          <div class="news-date" id="newsDate"></div>
+        </div>
+      </div>
+
     </div>
+
+    <!-- MENU TOUJOURS VISIBLE -->
+    <div class="menu-wrapper">
+      <div class="cylinder">
+        <a href="accueil.html" data-translate class="dot active"></a>
+        <a href="club.html" data-translate class="dot"></a>
+        <a href="equipe.html" data-translate class="dot"></a>
+        <a href="robot.html" data-translate class="dot"></a>
+        <a href="crc.html" data-translate class="dot"></a>
+        <a href="video.html" data-translate class="dot"></a>
+      </div>
+
+      <div class="labels icons">
+  <a href="accueil.html" title="Accueil">
+    <i class="fa-solid fa-house"></i>
+  </a>
+
+  <a href="club.html" title="Club">
+    <i class="fa-solid fa-users"></i>
+  </a>
+
+  <a href="equipe.html" title="Équipe">
+    <i class="fa-solid fa-user-group"></i>
+  </a>
+
+  <a href="robot.html" title="Bob le Robot">
+    <i class="fa-solid fa-robot"></i>
+  </a>
+
+  <a href="crc.html" title="compétition CRC">
+    <i class="fa-solid fa-microchip"></i>
+  </a>
+
+  <a href="video.html" title="Vidéo">
+    <i class="fa-solid fa-video"></i>
+  </a>
+</div>
+
+    </div>
+
+  </div>
 </header>
+
 
 <main>
     <section>
             <div class="sections blanches valeurs-container"></div>
-            <h2 style="font-size: 50px;"> Concevoir des expériences utilisateur <br>
+            <h2  data-translate style="font-size: 50px;"> Concevoir des expériences utilisateur <br>
                 mémorables</h2>
-            <p style="font-size: 20px; text-align: center;"> Nous vous aidons à créer des produits utilisables et
+            <p  data-translate style="font-size: 20px; text-align: center;"> Nous vous aidons à créer des produits utilisables et
                 attrayants que les gens <br>
                 aiment.</p>
             <img src="Images/Scène collaborative 11.png" alt="equipe" class="image-propos">
@@ -179,12 +199,13 @@
                     <span> | </span>
                     <a href="#">Conditions</a>
                 </div>
-                <div class="footer-lang">
-                    <select>
-                        <option selected>Français</option>
-                        <option>English</option>
-                    </select>
-                </div>
+                <div id="language-switcher" class="lang-switch">
+  <button data-lang="fr">FR</button>
+  <button data-lang="en">EN</button>
+</div>
+
+            
+
                 
             </div>
         </div>
@@ -203,9 +224,6 @@ window.addEventListener("scroll", function () {
 <audio id="navSound" preload="auto">
   <source src="son metro/son metro.mp4" type="audio/mpeg">
 </audio>
-
-<script src="script.js"></script>
-</body>
 
 <script src="script.js"></script>
 </body>

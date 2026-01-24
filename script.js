@@ -131,3 +131,50 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+/* ===== MASQUAGE HORLOGE + ACTUALITÉS AU SCROLL ===== */
+
+const hideElements = document.querySelectorAll(".hide-on-scroll");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 10) {
+    hideElements.forEach(el => el.classList.add("hidden"));
+  } else {
+    hideElements.forEach(el => el.classList.remove("hidden"));
+  }
+});
+/* ============================================ */
+/* ===== SWITCH LANGUE ===== */
+async function translateText(text, targetLang) {
+  const sourceLang = targetLang === "en" ? "fr" : "en";
+
+  const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${sourceLang}|${targetLang}`;
+
+  const response = await fetch(url);
+  const data = await response.json();
+
+  return data.responseData.translatedText;
+}
+
+async function translatePage(lang) {
+  const elements = document.querySelectorAll("[data-translate]");
+
+  for (const el of elements) {
+    const original = el.dataset.original || el.textContent.trim();
+
+    // Sauvegarde du texte original
+    if (!el.dataset.original) {
+      el.dataset.original = original;
+    }
+
+    const translated = await translateText(original, lang);
+    el.textContent = translated;
+  }
+}
+
+document.querySelectorAll("#language-switcher button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const lang = btn.dataset.lang;
+    translatePage(lang);
+  });
+});
+/* ================== FIN SCRIPT.JS ================== */

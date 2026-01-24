@@ -5,86 +5,104 @@
     <title>Accueil</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="images/cachedImage log1.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+>
+
 </head>
 
 <body>
 
 <header class="sticky-header">
-    <div class="top-row">
+  <div class="top-row">
 
-        <!-- PANNEAU GAUCHE -->
-        <div class="side-panel">
-            <div id="clock" class="clock">00 h 00</div>
+    <!-- ZONE À CACHER AU SCROLL -->
+    <div class="header-hide-zone">
 
-            <div class="station-card">
-                <img id="stationImage" src="" alt="Station">
-                <div class="station-name" id="stationName"></div>
+      <!-- PANNEAU GAUCHE -->
+      <div class="side-panel">
+        <div id="clock" class="clock">00 h 00</div>
 
-                <!-- LOGO EN BAS -->
-                <div class="station-logo">
-                    <a href="accueil.html">
-                        <img src="images/cachedImage log1.webp" alt="Logo">
-                    </a>
-                </div>
-            </div>
-        </div>
+        <div class="station-card">
+          <img id="stationImage" src="" alt="Station">
+          <div class="station-name" id="stationName" data-translate></div>
 
-        <!-- MENU -->
-        <div class="menu-wrapper">
-
-            <div class="cylinder">
-                <a href="accueil.html" class="dot active"></a>
-                <a href="club.html" class="dot"></a>
-                <a href="equipe.html" class="dot"></a>
-                <a href="robot.html" class="dot"></a>
-                <a href="crc.html" class="dot"></a>
-                <a href="video.html" class="dot"></a>
-            </div>
-
-            <div class="labels">
-                <a href="accueil.html">Accueil</a>
-                <a href="club.html">Club</a>
-                <a href="equipe.html">L’équipe</a>
-                <a href="robot.html">Bob le Robot</a>
-                <a href="crc.html">CRC</a>
-                <a href="video.html">Vidéo</a>
-            </div>
             
-
-            <!-- NEWS -->
-            <div class="news-screen">
-                <img id="newsImage" alt="Actualité">
-                <div class="news-overlay">
-                    <div class="news-title" id="newsTitle"></div>
-                    <div class="news-date" id="newsDate"></div>
-                </div>
-            </div>
-
         </div>
+      </div>
+
+      <!-- ACTUALITÉS -->
+      <div class="news-screen">
+        <img id="newsImage" alt="Actualité">
+        <div class="news-overlay">
+          <div class="news-title" id="newsTitle"></div>
+          <div class="news-date" id="newsDate"></div>
+        </div>
+      </div>
+
     </div>
+
+    <!-- MENU TOUJOURS VISIBLE -->
+    <div class="menu-wrapper">
+      <div class="cylinder">
+        <a href="accueil.html" data-translate class="dot active"></a>
+        <a href="club.html" data-translate class="dot"></a>
+        <a href="equipe.html" data-translate class="dot"></a>
+        <a href="robot.html" data-translate class="dot"></a>
+        <a href="crc.html" data-translate class="dot"></a>
+        <a href="video.html" data-translate class="dot"></a>
+      </div>
+
+      <div class="labels icons">
+  <a href="accueil.html" title="Accueil">
+    <i class="fa-solid fa-house"></i>
+  </a>
+
+  <a href="club.html" title="Club">
+    <i class="fa-solid fa-users"></i>
+  </a>
+
+  <a href="equipe.html" title="Équipe">
+    <i class="fa-solid fa-user-group"></i>
+  </a>
+
+  <a href="robot.html" title="Bob le Robot">
+    <i class="fa-solid fa-robot"></i>
+  </a>
+
+  <a href="crc.html" title="compétition CRC">
+    <i class="fa-solid fa-microchip"></i>
+  </a>
+
+  <a href="video.html" title="Vidéo">
+    <i class="fa-solid fa-video"></i>
+  </a>
+</div>
+
+    </div>
+
+  </div>
 </header>
+
 
 <main>
     <section>
             <div class="sections blanches valeurs-container"></div>
-            <h2 style="font-size: 50px;"> Concevoir des expériences utilisateur <br>
-                mémorables</h2>
-            <p style="font-size: 20px; text-align: center;"> Nous vous aidons à créer des produits utilisables et
-                attrayants que les gens <br>
-                aiment.</p>
-            <img src="Images/Scène collaborative 11.png" alt="equipe" class="image-propos">
+            <h2  data-translate style="font-size: 50px;"> Le club de Robotique de Bois de Boulogne vous souhaite la bienvenue à bord !<br>
+</h2>
+            <p  data-translate style="font-size: 30px; text-align: center;"> Le club a dans son sein les meilleure talents du CÉGEP. </p>
+             <br>
+    
+            <img src="images/image accuiel.jpg" alt="equipe" class="image-propos">
         </section>
 
 
         <section class="valeurs-section">
             <!-- Bloc 1 -->
             <div class="valeur-bloc inverse">
-                <img src="Images/Scène collaborative .png" alt="Travailler en s'amusant">
+                <img src="images/conne.jpg" alt="connes">
                 <div class="valeur-texte">
-                    <h3>Les talents sont partout</h3>
-                    <p>Nous servons des clients dans plus de 180 pays et travaillons avec des
-                        gens formidable dans le monde entier. Le travail de Justinyou est distribué dans Toute
-                        l'Europe et les Amériques.
+                    <h3>Les cônes sont partout</h3>
+                    <p> Votre première arrêt consiste à découvrir le chemin chargé de cônes oranges qu'on a dû parcourir pour en arriver à la compétition CRC. On vous rassure, que nous avons eu du plaisir.
 
                     </p>
                 </div>
@@ -92,65 +110,55 @@
 
                 <!-- Bloc 2 -->
                 <div class="valeur-bloc">
-                  <img src="Images/travail amusant a propos.png" alt="Travailler en s'amusant">
+                  <img src="images/equipe.webp" alt="equipe">
                   <div class="valeur-texte">
-                    <h3>Travailler dur tout en s'amusant</h3>
-                    <p>Comme vous le savez tous, la création d’une entreprise est un long chemin qui demande de la passion et du travail. C’est pourquoi il est si important d’apprécier les petites choses et de s’amuser tout au long du chemin.</p>
+                    <h3>Découvrez l'équipe !</h3>
+                    <p> L'équipe de robotique de Bois de Boulogne est composée d'étudiants passionnés de robotique et de technologie, ont travaillé fort cette année 2025-2026 pour vous offrir le meilleure spectacle.</p>
                   </div>
                 </div>
               
                 <!-- Bloc 3 -->
                 <div class="valeur-bloc inverse">
-                  <img src="Images/Experimenter.png" alt="Expérimentez">
+                  <img src="images/robot1.jpg" alt="robot">
                   <div class="valeur-texte">
-                    <h3>Expérimentez, échouez (ou réussissez ;-) et recommencez</h3>
-                    <p>Le succès n’est pas une ligne droite. Nous reconnaissons nos erreurs et en tirons les leçons qui s’imposent, afin de nous rapprocher de notre objectif. Nous avons tous des victoires, des échecs et des leçons à tirer.</p>
+                    <h3>Le bolide du siècle</h3>
+                    <p> Bob est le bolide de Émilien ne vous fiez pas à l'apparence, il va faire mordre la poussière à ses compétiteurs. il est venue pour gagner.</p>
                   </div>
                 </div>
               
                 <!-- Bloc 4 -->
                 <div class="valeur-bloc">
-                  <img src="Images/Nous ne laissons  a propo.png" alt="Soutien technique">
+                  <img src="images/CRC-Robotics.jpg" alt="CRC">
                   <div class="valeur-texte">
-                    <h3>Nous ne laissons personne de côté</h3>
-                    <p>Nous ne sommes pas seulement passionnés par notre produit, mais aussi par tout ce qui permet d’offrir la meilleure expérience possible à nos utilisateurs. Nous travaillons dur pour fournir à tous les clients de Justinyou un service d’aide exceptionnel.</p>
+                    <h3> En route vers le CRC</h3>
+                    <p> À la suivante station ! Découvrez le monde magique du CRC et sa compétition.</p>
                   </div>
                 </div>
-              </section>              
+              </section>    <br> <br> <br> <br>          
 
 
 
 
 
-        <section>
-            <div class="sections blanches">
-                <h3 style="font-size: 40px; text-align:center;"> Rencontrez l'équipe</h3>
-                <img src="Images/Rencontrez l'équipe.png" alt="active d'équipe"
-                    style="width: 100%; max-width: 1200px; display:block; margin:auto;">
-            </div>
-            <h5 style="font-size: 45px; text-align: center;"> Rejoignez-nous dans la mission <br>
-                d'offrir des expériences <br>
-                utilisateur géniales</h5>
+        <section class="video-section">
+  <h3 class="video-title">Une ébauche de vidéo</h3>
 
-            <div class="logos-container">
-                <img src="Images/partenaires.png" alt="partenaires">
-            </div>
-        </section>
-        <section>
-            <div class="sections bleu">
-                <h3 style="color: white; font-size: 45px; text-align: center;"><br>Plateforme de design d'interface utilisateur et <br> 
-                    d'UX tout-en-un</h3>
-                <p style="color: white; font-size: 25px; text-align: center;">
-                    Concevoir vos wireframes, prototypes & simulations.
-                </p>
-                <br>
-                <div style="text-align: center;">
-                    
-                <p> sdr</p>
-                    <br> <br> <br> <br> <br> <br>
-                </div>
+  <div class="video-container">
+    <video
+      id="localVideo"
+      controls
+      autoplay
+      muted
+      loop
+      playsinline
+    >
+      <source src="son-metro/board robotique.mp4" type="video/mp4">
+      Ton navigateur ne supporte pas la vidéo.
+    </video>
+  </div>
+</section>
 
-        </section>
+            
 
 </main>
 
@@ -166,10 +174,7 @@
                 <p class="footer-copy">© 2025 Robotique BdeB</p>
             </div>
 
-            <!-- Centre du footer -->
-            <div class="footer-social">
-                <img src="Images/bas de page.png" alt="Icônes sociales">
-            </div>
+            
 
 
             <!-- Droite -->
@@ -179,12 +184,13 @@
                     <span> | </span>
                     <a href="#">Conditions</a>
                 </div>
-                <div class="footer-lang">
-                    <select>
-                        <option selected>Français</option>
-                        <option>English</option>
-                    </select>
-                </div>
+                <div id="language-switcher" class="lang-switch">
+  <button data-lang="fr">FR</button>
+  <button data-lang="en">EN</button>
+</div>
+
+            
+
                 
             </div>
         </div>
@@ -203,9 +209,6 @@ window.addEventListener("scroll", function () {
 <audio id="navSound" preload="auto">
   <source src="son metro/son metro.mp4" type="audio/mpeg">
 </audio>
-
-<script src="script.js"></script>
-</body>
 
 <script src="script.js"></script>
 </body>
