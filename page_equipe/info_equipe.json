@@ -1,0 +1,101 @@
+[
+    {
+        "first_name": "Guillaume",
+        "last_name": "Lavertu",
+        "title": "The guy",
+        "roles": ["Programming competition", "Robot construction", "Website", "Kiosk", "Video"],
+        "photo": "guillaume.webp",
+        "bio": "I love learning and creating new things !!!",
+        "id" : "b2"
+    },
+    {
+        "first_name": "Alexandre",
+        "last_name": "Cabana",
+        "title": "Programming lead",
+        "roles": ["prog", "robot", "website", "kiosk", "video"],
+        "photo": "alexandre.webp",
+        "bio": "I love learning and creating new things !!!",
+        "id" : "g15"
+    },
+    {
+        "first_name": "Émilien",
+        "last_name": "Dion",
+        "title": "Robotics lead",
+        "roles": ["prog", "robot", "website", "kiosk", "video"],
+        "photo": "emilien.webp",
+        "bio": "I love learning and creating new things !!!",
+        "id" : "o16"
+    },
+    {
+        "first_name": "Jules",
+        "last_name": "Dumoulin",
+        "title": "Programming co-lead",
+        "roles": ["prog", "robot", "website", "kiosk", "video"],
+        "photo": "jules.webp",
+        "bio": "I love learning and creating new things !!!",
+        "id" : "g14"
+    },
+    {
+        "first_name": "Martin",
+        "last_name": "LastName",
+        "title": "Bob the builder",
+        "roles": ["prog", "robot", "website", "kiosk", "video"],
+        "photo": "martin.webp",
+        "bio": "I love learning and creating new things !!!",
+        "id" : "b5"
+    },
+    {
+        "first_name": "Kohan",
+        "last_name": "LastName",
+        "title": "The 3D artist",
+        "roles": ["prog", "robot", "website", "kiosk", "video"],
+        "photo": "kohan.webp",
+        "bio": "I love learning and creating new things !!!",
+        "id" : "b6"
+    },
+    {
+        "first_name": "Camille",
+        "last_name": "LastName",
+        "title": "Video lead",
+        "roles": ["video"],
+        "photo": "camille.webp",
+        "bio": "I love learning and creating new things !!!",
+        "id" : "j2"
+    },
+    {
+        "first_name": "Selma",
+        "last_name": "LastName",
+        "title": "The manager",
+        "roles": ["website", "kiosk", "video"],
+        "photo": "selma.png",
+        "bio": "I love learning and creating new things !!!",
+        "id" : "g13"
+    },
+    {
+        "first_name": "Haschley",
+        "last_name": "LastName",
+        "title": "The webmaster",
+        "roles": ["website"],
+        "photo": "haschley.webp",
+        "bio": "I love learning and creating new things !!!",
+        "id" : "b3"
+    },
+    {
+        "first_name": "Mohamed",
+        "last_name": "LastName",
+        "title": "The guy",
+        "roles": ["website"],
+        "photo": "mohamed.webp",
+        "bio": "I love learning and creating new things !!!",
+        "id" : "o15"
+    },
+    {
+        "first_name": "Mohamed",
+        "last_name": "LastName",
+        "title": "The guy",
+        "roles": ["website"],
+        "photo": "mohamed2.webp",
+        "bio": "I love learning and creating new things !!!",
+        "id" : "o17"
+    }
+]
