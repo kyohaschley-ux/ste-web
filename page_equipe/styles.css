@@ -1,0 +1,421 @@
+.page{
+  background-color: #212121;
+  /*padding: 0px 15%;*/
+      justify-content: center;
+    align-items: center;
+
+}
+
+nav {
+    height: 130px;
+    background-color: rgba(29, 29, 29, 0.602);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15%;
+    color: white;
+    top: 0;
+
+    position: -webkit-sticky; /* Support for Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure it stays above the metro map */
+
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+.nav-logo {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+}
+.nav-line {
+    width: 50%;
+    height: 30px;
+    background-image: linear-gradient(to right, rgb(255, 197, 52), rgb(255, 183, 2));
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 10px;
+}
+.nav-circle {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100px;
+    border: solid #1E1E1E;
+    border-width: 3px;
+}
+
+.nav-circle:hover {
+    background-color: gray;
+}
+
+.wrapper{
+    justify-content: center;
+    align-items: center;
+    padding: 0px 15%;
+}
+
+.page-name{
+    background-color: rgba(0, 0, 0, 0.541);
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Sticky Magic */
+    /*position: -webkit-sticky; /* Support for Safari */
+    /* position: sticky;
+    top: 0; */
+    /* z-index: 1000; /* Ensure it stays above the metro map */
+
+    /* -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px); */
+}
+
+.page-name h2{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 2em;
+}
+
+.options{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.options button{
+    background-color: #313131;
+    stroke-width: 0;
+    border: 0;
+    border-radius: 0px 0px 10px 10px;
+    width: 100%;
+    height: 124px;
+    color: white;
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.4);
+}
+
+.options button:hover{
+    background-color: #272727;
+    cursor: pointer;
+}
+
+.options button.active{
+    background-color: #1E1E1E;
+    pointer-events: none;
+}
+
+.circle{
+    fill: rgb(255, 191, 0);
+}
+.page h3{
+    color: white;
+    font-size: 2em;
+}
+.metro-map {
+    background-color: rgb(17, 17, 17);
+    border-radius: 50px;
+    display: flex;
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#metro-svg { 
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+}
+
+/* METRO-ELEMENTS */
+/* -line path   */
+.line-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear forwards;
+  animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+@keyframes dash {
+  to { stroke-dashoffset: 0; }
+}
+/* -dots */
+.metro-dot {
+fill: white;
+  opacity: 1;
+  transition: opacity 0.2s;
+
+  /* The Fix: */
+  transform-box: fill-box; 
+  transform-origin: center;
+
+  transform: scale(1); /* Makes the dot 2.5x larger */
+  /* 2. Run the animation, but don't let it 'lock' the opacity */
+  animation: appear 0.5s ease-out;
+  animation-fill-mode: backwards; /* This is the key! */
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0);
+    transform: translate(10px,20px);
+  }
+  /* Notice: We don't define a 'to' for opacity here. 
+     The animation will naturally finish and return 
+     control to the .metro-dot class styles. */
+}
+
+.metro-dot-hitbox{
+    opacity: 0;
+    transform-box: fill-box; 
+    transform-origin: center;
+}
+.metro-dot-hitbox:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+/* join */
+@keyframes appear {
+    from {
+        transform: translate(0, 10px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+.metro-join {
+    /* Use 'forwards' so it stays visible after the animation ends */
+    animation: appear 0.5s ease-out 1s backwards;
+}
+
+/* master */
+@keyframes appear {
+    from {
+        transform: translate(0, 10px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+.metro-master {
+    /* Use 'forwards' so it stays visible after the animation ends */
+    animation: appear 0.5s ease-out 3s backwards;
+}
+
+
+
+
+/* -Card info */
+.team-card {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  background-color: black;
+  color:white;
+}
+/* card info styles */
+#card-info {
+    position: fixed; /* Crucial for positioning via JS */
+    display: none;
+    z-index: 100;
+    pointer-events: none; /* Prevents the card itself from triggering mouseleave */
+    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+
+    /* Glassmorphism Effect */
+    /* 1. Dark Glass Background */
+    background-color: rgba(0, 0, 0, 0.7); /* Deep black with transparency */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    /* 2. Subtle Border for Definition */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); /* Stronger shadow for dark cards */
+    
+    /* 3. Global Text Color */
+    color: #ffffff; 
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    max-width: 320px;
+}
+
+/* The Person's Name */
+#card-info h2 {
+    margin: 12px 0 4px 0;
+    font-size: 1.6rem;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* The Job Title */
+#card-info h1 {
+    margin: 0 0 12px 0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #3498db; /* A bright neon blue to pop against the black */
+    font-weight: 600;
+}
+
+/* The Bio/Description */
+#card-info h3 {
+    margin: 0 0 15px 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #b2bec3; /* Light grey for the bio so it's not too "loud" */
+    font-weight: 400;
+}
+
+/* The Hashtag Roles */
+#card-info p span {
+    display: inline-block;
+    background: rgba(52, 152, 219, 0.2); /* Transparent blue tint */
+    color: #3498db;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-right: 6px;
+    border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+#card-info.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+#connector-line {
+    /* We'll set the dasharray in JS since the line length changes */
+    transition: stroke-dashoffset 0.4s ease-out;
+}
+
+#connector-line.active {
+    stroke-dashoffset: 0;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.metro{
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    position: relative;
+    margin: 0 15%;
+}
+
+.dot-label {
+    fill: white;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    pointer-events: none; /* Crucial: clicks go through text to the dot below */
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+/* Optional: Make the label brighter when hovering the dot */
+.metro-dot-hitbox:hover + .dot-label, 
+.metro-dot-hitbox:hover ~ .dot-label {
+    opacity: 1;
+}
+
+/* ====== */
+
+/* #list-page {
+
+} */
+
+
+.card-list {
+    display: flex;
+    /* background: #020202; */
+    background-image: linear-gradient(to right, rgb(0,0,0), rgb(23, 23, 23));
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+    align-items: center;
+    gap: 20px;
+    transition: background-image 2s;
+    transition-timing-function: ease-in-out;
+}
+
+.card-list img {
+    width: 100px;;
+    height: 100px;
+    border-radius: 100px;
+}
+.card-list h1, h2 {
+    margin: 0;
+}
+
+.card-list h1{
+    color: #3498db;
+}
+
+.card-list .right-part div {
+    margin-top: 20px;
+}
+
+.card-list span {
+    display: inline-block;
+    background: rgba(52, 152, 219, 0.2); /* Transparent blue tint */
+    color: #3498db;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-right: 6px;
+    border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+.card-list .right-part {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-list:hover {
+    background-image: linear-gradient(to right, rgb(24, 24, 24), rgb(16, 16, 16));;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    /* .card-list {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    } */
+    .wrapper{
+        padding: 0px 5%;
+    }
+    .card-list .right-part div{
+        display: none;
+    }
+
+    
+}
